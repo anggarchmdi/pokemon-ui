@@ -19,12 +19,3 @@ Dibangun dengan fokus pada UI/UX, performa, dan scalability.
 - 📁 Struktur folder rapi & scalable
 
 ---
-
-## 📦 Installation
-
-Clone repo:
-
-```bash
-git clone https://github.com/anggarchmdi/react-starter-kit.git
-cd react-starter-kit
-lanjut ngopi & menikmati hidup😉
