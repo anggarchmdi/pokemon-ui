@@ -1,7 +1,7 @@
-# 🚀 React Starter Kit — Vite + Tailwind + Axios + Zustand + Router
+Pokeview — Landing Page + PokeAPI
 
-Starter kit React sederhana, cepat, dan scalable.  
-Dibuat agar proses pembuatan project baru jadi tinggal **clone → install → jalan**.
+Landing page interaktif dengan data Pokémon real-time dari PokeAPI.
+Dibangun dengan fokus pada UI/UX, performa, dan scalability.
 
 ---
 
