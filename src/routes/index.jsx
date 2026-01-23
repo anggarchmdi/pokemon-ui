@@ -25,7 +25,7 @@ export default function AppRouter() {
                         </MainLayout>
                     </AdminRoute>} />
                 {/* user */}
-                <Route path="/user" element={
+                <Route path="/" element={
                     <ProtectedRoute>
                         <MainLayout>
                             <UserDashboard />
