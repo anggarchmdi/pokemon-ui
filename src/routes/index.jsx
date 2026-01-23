@@ -7,7 +7,7 @@ import Login from "../views/auth/Login";
 import Register from "../views/auth/Register";
 import AdminDashboard from "../views/admin/AdminDashboard ";
 import UserDashboard from "../views/user/UserDashboard ";
-import NotFound from "../views/notfound/NotFound ";
+import NotFound from "../views/notfound/NotFound";
 
 
 export default function AppRouter() {
