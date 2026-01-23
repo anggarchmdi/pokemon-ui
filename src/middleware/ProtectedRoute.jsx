@@ -1,7 +1,10 @@
-import { Navigate } from "react-router-dom";
-import { useUserStore } from "../store/userStore";
+import { Navigate } from "react-router-dom"
+import { useAuthStore } from "../store/authStore"
 
 export default function ProtectedRoute({ children }) {
-    const token = useUserStore((s) => s.token);
-    return token ? children : <Navigate to="/login" replace />
+  const { user, hasHydrated } = useAuthStore()
+
+  if (!hasHydrated) return null 
+
+  return user ? children : <Navigate to="/login" replace />
 }
