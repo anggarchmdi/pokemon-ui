@@ -6,8 +6,12 @@ import MainLayout from "../layouts/MainLayout";
 import Login from "../views/auth/Login";
 import Register from "../views/auth/Register";
 import AdminDashboard from "../views/admin/AdminDashboard ";
-import UserDashboard from "../views/user/UserDashboard ";
 import NotFound from "../views/notfound/NotFound";
+import Home from "../views/pages/home/Home";
+import Cart from "../views/pages/cart/Cart";
+import Pokemon from "../views/pages/pokemon/Pokemon";
+import PokemonDetail from "../views/pages/pokemon/PokemonDetail";
+
 
 
 export default function AppRouter() {
@@ -28,7 +32,25 @@ export default function AppRouter() {
                 <Route path="/" element={
                     <ProtectedRoute>
                         <MainLayout>
-                            <UserDashboard />
+                            <Home />
+                        </MainLayout>
+                    </ProtectedRoute>}  />
+                <Route path="/pokemon" element={
+                    <ProtectedRoute>
+                        <MainLayout>
+                            <Pokemon />
+                        </MainLayout>
+                    </ProtectedRoute>}  />
+                <Route path="/pokemon/:name" element={
+                    <ProtectedRoute>
+                        <MainLayout>
+                            <PokemonDetail />
+                        </MainLayout>
+                    </ProtectedRoute>}  />
+                <Route path="/cart" element={
+                    <ProtectedRoute>
+                        <MainLayout>
+                            <Cart />
                         </MainLayout>
                     </ProtectedRoute>}  />
             </Routes>
