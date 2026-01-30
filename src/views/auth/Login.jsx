@@ -38,7 +38,7 @@ function Login() {
   return (
     <div className='w-full flex flex-col justify-center'>
       <div className="w-full h-12 bg-gradient-to-br mb-4 from-[#FF6500] to-yellow-400 flex justify-center text-center bg-clip-text">
-      <h1 className='font-bold text-[2rem] font-poppins text-transparent text-center'>Pokemon</h1>
+      <h1 className='font-bold text-[2rem] font-poppins text-transparent text-center'>Pokémon</h1>
       </div>
 
       <form onSubmit={handleLogin} className='space-y-3'>
