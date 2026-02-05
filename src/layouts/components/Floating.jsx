@@ -8,17 +8,14 @@ function Floating() {
 
   const messages = [
   `hey ${username}! Jangan lupa minum air ya 💧`,
-  `hey ${username}, Madrid kapan treble🤣🤣`,
   `Cari Pokémon atau cari jodoh nih, ${username}? 🤔`,
-  `nunggu 19jt lap. pekerjaan kek nunggu Barca juara UCL🥲`,
-  `hey ${username}, 4 sehat 5 nggak nambah nambah ya!😆`,
-  `${username}, saksikanlah kebangkitan Setan Merah!😉`,
-  `Yang penting 15 UCL ya ${username}🫠`,
-  `bercandaa yaa ${username}....Slebewwwww🗿`,
+  `${username}, saksikanlah kebangkitan King MU!😉`,
+  `Halo ${username}! Siap nangkep Pokémon hari ini? 🎯`,
   `hey ${username}, udah mengapresiasi pemerintah belum hari ini?🤣`,
   `${username}, hidup itu keras… tapi cicilan lebih keras 🤣`,
-  `hey ${username}, udah panen sawit belum hari ini?🤣`,
   `hey ${username} apapun yang terjadi, teruslah bernafas!`,
+  `Hey ${username}, jangan lupa cek stats Pokémon favoritmu! 📊`,
+  `${username}, ketemu Pokémon langka belum hari ini? ✨`,
   ]
 
   const [text, setText] = useState(messages[0])
