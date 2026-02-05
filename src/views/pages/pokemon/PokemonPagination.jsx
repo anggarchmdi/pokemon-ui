@@ -10,6 +10,8 @@ function PokemonPagination({ page, totalPage, onChange }) {
         onChange={(e, value) => onChange(value)}
         shape="rounded"
         color="warning"
+        siblingCount={0}
+        boundaryCount={1}
       />
     </Stack>
   )
