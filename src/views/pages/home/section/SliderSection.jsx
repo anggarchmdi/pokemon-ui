@@ -1,19 +1,23 @@
-import React, { useEffect, useState } from 'react'
-import Slider from 'react-slick'
+import React, { useEffect, useRef, useState } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay } from 'swiper/modules'
+import 'swiper/css'
 import api from '../../../../lib/axios'
 import PokemonCard from '../components/PokemonCard'
 import AOS from 'aos'
 
 function SliderSection() {
   const [pokemons, setPokemons] = useState([])
-   useEffect(() => {
-          AOS.init({
-              duration:1000,
-              delay:700,
-              once:false,
-              easing: "ease-in-out"
-          })
-      })
+  const swiperRef = useRef(null)
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      delay: 700,
+      once: false,
+      easing: 'ease-in-out',
+    })
+  }, [])
 
   useEffect(() => {
     const fetchPokemons = async () => {
@@ -26,42 +30,51 @@ function SliderSection() {
     fetchPokemons()
   }, [])
 
-  const settings = {
-    infinite: true,
-    speed: 800,
-    slidesToShow: 8,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    arrows: false,
-    dots: false,
-    pauseOnHover: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 5 }
-      },
-      {
-        breakpoint: 640,
-        settings: { slidesToShow: 1 }
-      }
-    ]
-  }
+  useEffect(() => {
+    if (swiperRef.current && pokemons.length > 0) {
+      swiperRef.current.autoplay.start()
+    }
+  }, [pokemons])
 
   return (
-    <section className="py-20 bg-gray-100">
-      <h2 className="text-center text-4xl font-bold mb-12 text-yellow-500" data-aos="fade-up">
-        Popular Pokémon
+    <section className="py-12 shadow-md bg-gradient-to-b from-gray-50 via-gray-100 to-gray-50">
+      <h2 className="text-center text-2xl md:text-3xl font-extrabold mb-2 font-rotobo ">
+        Popular
+        <span className='text-rose-500 ml-2'>
+        Pokémon
+        </span>
       </h2>
+      <p className="text-center text-sm text-slate-500 mb-6">
+        Fan favorites, auto-rotating every few seconds
+      </p>
 
-      <div className="p-2">
-       <Slider {...settings}>
-      {pokemons.map(pokemon => (
-        <div key={pokemon.id} className="flex justify-center">
-          <PokemonCard pokemon={pokemon}  />
-        </div>
-      ))}
-    </Slider>
+      <div className="px-2">
+        <Swiper
+          modules={[Autoplay]}
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          spaceBetween={16}
+          slidesPerView={8}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+            waitForTransition: false,
+          }}
+          loop
+          breakpoints={{
+            0: { slidesPerView: 2 },
+            640: { slidesPerView: 3 },
+            768: { slidesPerView: 4 },
+            1024: { slidesPerView: 5 },
+            1280: { slidesPerView: 8 },
+          }}
+        >
+          {pokemons.map(pokemon => (
+            <SwiperSlide key={pokemon.id} className="flex justify-center py-4">
+              <PokemonCard pokemon={pokemon} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
   )
