@@ -76,7 +76,7 @@ function Pokemon() {
       </div>
       <Floating />
       {loading ? (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 min-h-screen">
+        <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 gap-4 min-h-screen">
           {Array.from({ length: LIMIT }).map((_, i) => (
             <PokemonSkeleton key={i} />
           ))}
