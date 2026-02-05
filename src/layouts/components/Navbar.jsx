@@ -62,7 +62,7 @@ function Navbar() {
         ${scrolled ? 'bg-gray-900/90 backdrop-blur-xl shadow-md' : 'bg-gray-900'}
       `}
     >
-      <div className="mx-auto px-12 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 md:px-0 lg:px-4 xl:px-14 py-4 flex items-center justify-between">
         <h1
           onClick={() => navigate('/')}
           className="text-xl font-bold cursor-pointer text-white"
@@ -118,19 +118,19 @@ function Navbar() {
               <div className="absolute right-0 top-8 mt-2 w-40 bg-white shadow-lg font-bold rounded-lg text-sm overflow-hidden">
                 <button
                   onClick={() => navigate('/profile')}
-                  className="block w-full text-left px-4 py-2 hover:bg-yellow-100"
+                  className="block w-full text-left px-4 py-2 hover:scale-95 duration-300"
                 >
                   Profile
                 </button>
                 <button
                   onClick={() => navigate('/cart')}
-                  className="block w-full text-left px-4 py-2 hover:bg-yellow-100"
+                  className="block w-full text-left px-4 py-2 hover:scale-95 duration-300"
                 >
                   Orders
                 </button>
                 <button
                   onClick={handleLogout}
-                  className="block w-full text-left px-4 py-2 text-red-500 hover:bg-yellow-100"
+                  className="block w-full text-left px-4 py-2 text-red-500 hover:scale-95 duration-300"
                 >
                   Logout
                 </button>
