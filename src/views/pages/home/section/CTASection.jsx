@@ -11,7 +11,7 @@ function CTASection() {
   }
   return (
    <section className="py-9 bg-gray-900 text-center">
-      <h2 className="text-3xl font-bold text-white">
+      <h2 className="text-2xl md:text-3xl font-bold text-white">
         Ready to Catch Them All?
       </h2>
       <button onClick={handleExplore}
