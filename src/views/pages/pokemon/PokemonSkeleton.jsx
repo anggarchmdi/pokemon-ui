@@ -5,14 +5,14 @@ export default function PokemonSkeleton() {
     <Card sx={{ borderRadius: 3 }}>
       <Skeleton
         variant="rectangular"
-        height={140}
+        height={170}
         animation="wave"
       />
 
       <CardContent>
-        <Skeleton width="60%" height={24} />
-        <Skeleton width="40%" height={18} />
-        <Skeleton width="80%" height={18} />
+        <div className="flex justify-center items-center">
+        <Skeleton className="items-center" width="70%" height={24} />
+        </div>
       </CardContent>
     </Card>
   )
