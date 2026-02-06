@@ -34,7 +34,7 @@ function HeroSection() {
 
   return (
     <section className="relative h-screen md:h-96 flex w-full items-center bg-gradient-to-b from-slate-900 via-slate-900 to-black overflow-hidden">
-      <div className="container mx-auto px-4 md:px-0 lg:px-4 xl:px-14 grid grid-cols-1 md:grid-cols-2 gap-8 items-center pt-10">
+      <div className="container mx-auto px-4 md:px-4 lg:px-4 xl:px-8 2xl:px-14 grid grid-cols-1 md:grid-cols-2 gap-8 items-center pt-10">
         <div data-aos="fade-up">
           <span className="inline-block mb-3 rounded-full bg-yellow-500/10 px-3 py-1 text-xs font-semibold text-yellow-400">
             New Pokémon every 10s
