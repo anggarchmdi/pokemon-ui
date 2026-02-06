@@ -69,14 +69,14 @@ function Pokemon() {
   }, [page, query])
 
   return (
-    <div className="py-20 min-h-screen px-10">
-      <div className="w-72 h-8 bg-gradient-to-bl from-orange-800 to-amber-400 mb-12 bg-clip-text">
-      <h1 className="font-bold text-3xl text-transparent">Pilih Pokemon</h1>
-      <p className="font-poppins text-gray-600 text-sm text-clip line-clamp-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, quas.</p>
+    <div className="py-20 min-h-screen px-2 lg:px-4 xl:px-14">
+      <div className="w-96 h-8 bg-gradient-to-bl from-rose-800 to-amber-500 bg-clip-text">
+      <h1 className="font-bold text-2xl md:text-3xl text-transparent">Cari & Koleksi Pokémon Favoritmu</h1>
       </div>
+      <p className="line-clamp-1 w-96 md:w-[450px] font-poppins md:mt-2">Jelajahi ratusan Pokémon dari berbagai generasi. Gunakan pencarian untuk menemukan favoritmu!</p>
       <Floating />
       {loading ? (
-        <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 gap-4 min-h-screen">
+        <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 gap-4 py-8 min-h-screen">
           {Array.from({ length: LIMIT }).map((_, i) => (
             <PokemonSkeleton key={i} />
           ))}
