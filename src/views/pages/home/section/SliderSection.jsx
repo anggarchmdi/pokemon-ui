@@ -66,7 +66,8 @@ function SliderSection() {
             640: { slidesPerView: 3 },
             768: { slidesPerView: 4 },
             1024: { slidesPerView: 5 },
-            1280: { slidesPerView: 8 },
+            1280: { slidesPerView: 7 },
+            1536: { slidesPerView: 8 },
           }}
         >
           {pokemons.map(pokemon => (
