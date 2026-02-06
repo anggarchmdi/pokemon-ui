@@ -23,7 +23,7 @@ function Footer() {
           <ul className="space-y-2 text-sm text-gray-400">
             <li onClick={() => navigate('/')} className="hover:text-yellow-400 cursor-pointer">Home</li>
             <li onClick={() => navigate('/pokemon')} className="hover:text-yellow-400 cursor-pointer">Pokémon</li>
-            <li className="hover:text-yellow-400 cursor-pointer">About</li>
+            <li onClick={() => navigate('/about')} className="hover:text-yellow-400 cursor-pointer">About</li>
           </ul>
         </div>
 
@@ -31,21 +31,27 @@ function Footer() {
           <h2 className="font-semibold mb-4">Connect</h2>
           <div className="flex gap-4 text-xl text-gray-400">
             <a
-              href="#"
+              href="https://github.com/anggarchmdi"
               className="hover:text-yellow-400 transition"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="GitHub"
             >
               <FaGithub />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/jo.rchm/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-yellow-400 transition"
               aria-label="Instagram"
             >
               <FaInstagram />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/anggarchmdi/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-yellow-400 transition"
               aria-label="LinkedIn"
             >
