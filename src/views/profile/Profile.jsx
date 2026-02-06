@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { useAuthStore } from '../../store/authStore'
 import useCollectionStore from '../../store/useCollectionStore'
 import { useEffect, useState } from 'react'
+import { toast } from 'react-toastify'
 
 const TOTAL_POKEMON = 1010
 
@@ -10,6 +11,16 @@ function Profile() {
   const navigate = useNavigate()
   const user = useAuthStore(state => state.user)
   const username = user?.username || 'Bro'
+
+  const handleLogout = () => {
+    toast.error("berhasil Logout")
+    setTimeout(() => {
+      useAuthStore.getState().logout()
+      localStorage.removeItem('username')
+      navigate('/login')
+    }, 1500)
+}
+  
 
   useEffect(() => {
     const storedName = localStorage.getItem('username')
@@ -23,12 +34,19 @@ function Profile() {
       <div className="max-w-2xl mx-auto bg-white/10 backdrop-blur-xl p-8 rounded-3xl border border-white/10 shadow-2xl">
         
         <div className="flex items-center gap-4 mb-6">
-          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-amber-400 to-rose-500 flex items-center justify-center text-2xl font-bold">
+          <div className="flex justify-between w-full">
+            <div className="flex gap-4">
+          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 to-rose-500 flex items-center justify-center text-2xl font-bold">
             {username.charAt(0).toUpperCase()}
           </div>
           <div>
             <h1 className="text-2xl font-bold">{username}</h1>
             <p className="text-sm text-gray-300">Pokémon Trainer</p>
+          </div>
+            </div>
+          <button onClick={handleLogout} className="font-bold text-red-500 flex justify-center items-center md:hidden">
+            logout
+          </button>
           </div>
         </div>
 
