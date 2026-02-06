@@ -4,6 +4,9 @@ import { NavLink, useLocation, useNavigate, useSearchParams } from 'react-router
 import { toast } from 'react-toastify'
 import { useAuthStore } from '../../store/authStore'
 import useDebounce from '../../hooks/useDebounce'
+import { BiBookmarks } from "react-icons/bi";
+import { CgProfile } from "react-icons/cg"
+import { CiLogout } from "react-icons/ci";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -71,7 +74,7 @@ function Navbar() {
         </h1>
 
         {/* DESKTOP */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="flex items-center gap-6">
           {/* SEARCH */}
           {isPokemonPage && (
           <div className="flex items-center bg-gray-100 px-3 py-1 rounded-full">
@@ -80,13 +83,13 @@ function Navbar() {
               value={keyword}
               onChange={e => setKeyword(e.target.value)}
               placeholder="Search Pokémon..."
-              className="bg-transparent outline-none ml-2 text-sm w-40"
+              className="bg-transparent outline-none ml-2 text-sm w-24 md:w-40"
             />
           </div>
         )}
 
           {/* MENU */}
-          <ul className="flex items-center gap-6 text-sm font-medium">
+          <ul className="hidden md:flex items-center gap-6 text-sm font-medium">
             {['/', '/pokemon', '/about'].map((path, i) => (
               <NavLink
                 key={path}
@@ -118,20 +121,23 @@ function Navbar() {
               <div className="absolute right-0 top-8 mt-2 w-40 bg-white shadow-lg font-bold rounded-lg text-sm overflow-hidden">
                 <button
                   onClick={() => navigate('/profile')}
-                  className="block w-full text-left px-4 py-2 hover:scale-95 duration-300"
+                  className="flex justify-start items-center gap-x-2 w-full text-left px-4 py-2 hover:scale-95 duration-300"
                 >
+                  <span><CgProfile /></span>
                   Profile
                 </button>
                 <button
                   onClick={() => navigate('/collection')}
-                  className="block w-full text-left px-4 py-2 hover:scale-95 duration-300"
+                  className="flex justify-start items-center gap-x-2 w-full text-left px-4 py-2 hover:scale-95 duration-300"
                 >
+                  <span><BiBookmarks /></span>
                   Collection
                 </button>
                 <button
                   onClick={handleLogout}
-                  className="block w-full text-left px-4 py-2 text-red-500 hover:scale-95 duration-300"
+                  className="flex justify-start items-center gap-x-2 w-full text-left px-4 py-2 text-red-500 hover:scale-95 duration-300"
                 >
+                  <span><CiLogout /></span>
                   Logout
                 </button>
               </div>
