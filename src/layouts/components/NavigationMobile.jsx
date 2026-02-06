@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { FaHome } from "react-icons/fa"
-import { CgProfile } from "react-icons/cg"
+import { IoIosAlert } from "react-icons/io";
 import { MdCatchingPokemon } from "react-icons/md"
 
 function NavigationMobile() {
@@ -18,8 +18,8 @@ function NavigationMobile() {
       link: '/pokemon'
     },
     { 
-      icon: CgProfile,
-      link: '/profile'
+      icon: IoIosAlert,
+      link: '/about'
     }
   ]
 
