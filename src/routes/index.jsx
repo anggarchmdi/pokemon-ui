@@ -11,7 +11,9 @@ import Home from "../views/pages/home/Home";
 import Cart from "../views/pages/cart/Cart";
 import Pokemon from "../views/pages/pokemon/Pokemon";
 import PokemonDetail from "../views/pages/pokemon/PokemonDetail";
-
+import About from "../views/pages/about/About";
+import Profile from "../views/profile/Profile";
+import Collection from "../views/collection/Collection";
 
 
 export default function AppRouter() {
@@ -39,6 +41,24 @@ export default function AppRouter() {
                     <ProtectedRoute>
                         <MainLayout>
                             <Pokemon />
+                        </MainLayout>
+                    </ProtectedRoute>}  />
+                <Route path="/about" element={
+                    <ProtectedRoute>
+                        <MainLayout>
+                            <About />
+                        </MainLayout>
+                    </ProtectedRoute>}  />
+                <Route path="/collection" element={
+                    <ProtectedRoute>
+                        <MainLayout>
+                            <Collection />
+                        </MainLayout>
+                    </ProtectedRoute>}  />
+                <Route path="/profile" element={
+                    <ProtectedRoute>
+                        <MainLayout>
+                            <Profile />
                         </MainLayout>
                     </ProtectedRoute>}  />
                 <Route path="/pokemon/:name" element={
