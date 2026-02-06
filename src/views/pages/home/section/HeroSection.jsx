@@ -62,7 +62,7 @@ function HeroSection() {
             <img
               src={pokemon.sprites.other['official-artwork'].front_default}
               alt={pokemon.name}
-              className="w-56 md:w-80 drop-shadow-2xl transition-transform duration-700 hover:scale-105"
+              className="w-72 md:w-80 drop-shadow-2xl -translate-y-12 md:translate-y-0 transition-transform duration-700 hover:scale-105"
               draggable={false}
             />
           </div>
