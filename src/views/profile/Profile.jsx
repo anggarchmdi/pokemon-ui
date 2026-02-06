@@ -12,16 +12,6 @@ function Profile() {
   const user = useAuthStore(state => state.user)
   const username = user?.username || 'Bro'
 
-  const handleLogout = () => {
-    toast.error("berhasil Logout")
-    setTimeout(() => {
-      useAuthStore.getState().logout()
-      localStorage.removeItem('username')
-      navigate('/login')
-    }, 1500)
-}
-  
-
   useEffect(() => {
     const storedName = localStorage.getItem('username')
     if (storedName) setUsername(storedName)
@@ -44,9 +34,6 @@ function Profile() {
             <p className="text-sm text-gray-300">Pokémon Trainer</p>
           </div>
             </div>
-          <button onClick={handleLogout} className="font-bold text-red-500 flex justify-center items-center md:hidden">
-            logout
-          </button>
           </div>
         </div>
 
