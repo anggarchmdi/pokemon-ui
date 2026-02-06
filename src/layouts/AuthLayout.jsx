@@ -31,7 +31,7 @@ export default function AuthLayout({ children }) {
     
     return (
        <div className="min-h-screen bg-gradient-to-tr from-[#FF6500] to-yellow-300 w-full flex justify-center items-center">
-        <div className="max-w-sm p-4 md:p-0 md:max-w-3xl h-[400px] w-full grid grid-cols-1 md:grid-cols-2 shadow-lg">
+        <div className="max-w-sm p-4 md:p-0 md:max-w-3xl h-[420px] w-full grid grid-cols-1 md:grid-cols-2 shadow-lg">
         <div className="w-full h-full bg-white rounded-l-xl flex justify-center items-center">
             <div className="p-8 flex flex-col justify-center items-center w-full">
                 {children}
